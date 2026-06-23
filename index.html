@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sarah Kim Studio — community curation, gallery programming, creative documentation, and digital media strategy for art communities.">
+  <title>Sarah Kim Studio — Community Curation &amp; Documentation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hedvig+Letters+Serif&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="layout-wrapper">
+
+    <header class="site-header">
+      <div class="layout-container">
+        <a href="index.html" class="site-logo">Sarah Kim Studio</a>
+        <nav class="site-nav" aria-label="Main navigation">
+          <ul class="site-nav__list">
+            <li><a href="#work" class="site-nav__link site-nav__link--active">Work</a></li>
+            <li><a href="about.html" class="site-nav__link">About</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="site-main site-main--landing">
+      <section class="landing-hero" id="home-content">
+        <div class="layout-container">
+          <div class="landing-header-box">
+            <h1 class="landing-header-box__title">Architecting spaces, conversations, and digital narratives that bring art communities closer together.</h1>
+          </div>
+        </div>
+      </section>
+
+      <div id="work" class="work-pillars" aria-label="Work">
+
+        <section class="work-pillar" aria-labelledby="pillar-gathering">
+          <header class="work-pillar__header">
+            <h2 class="work-pillar__title" id="pillar-gathering">Gallery Curation &amp; Event Architecture</h2>
+            <p class="work-pillar__frame">Designing the physical parameters of connection&mdash;managing the logistics, hospitality, and communication frameworks that turn public gallery exhibitions into vibrant community gatherings.</p>
+          </header>
+          <div class="pillar-carousel" data-pillar-carousel="gathering"></div>
+        </section>
+
+        <section class="work-pillar" aria-labelledby="pillar-archive">
+          <header class="work-pillar__header">
+            <h2 class="work-pillar__title" id="pillar-archive">Studio Documentation &amp; Artist Profiles</h2>
+            <p class="work-pillar__frame">Preserving creative lineage through intimate cinematography and photography, capturing the quiet, intuitive working methods of regional artists within their personal sanctuaries.</p>
+          </header>
+          <div class="pillar-carousel" data-pillar-carousel="archive"></div>
+        </section>
+
+        <section class="work-pillar" aria-labelledby="pillar-record">
+          <header class="work-pillar__header">
+            <h2 class="work-pillar__title" id="pillar-record">Art Books, Catalogs, &amp; Institutional Dossiers</h2>
+            <p class="work-pillar__frame">Crafting refined print and digital scholarship&mdash;from tailored cataloging and layout design to compiling precise dossiers that fulfill the discerning needs of private, public, and institutional collectors.</p>
+          </header>
+          <div class="pillar-spreads" data-pillar-spreads="record"></div>
+        </section>
+
+        <section class="work-pillar" aria-labelledby="pillar-architecture">
+          <header class="work-pillar__header">
+            <h2 class="work-pillar__title" id="pillar-architecture">Web Strategy &amp; Collection Databases</h2>
+            <p class="work-pillar__frame">Engineering the silent backend of the art world&mdash;bridging meticulous inventory databases like Artlogic with elegant, user-facing web design to make collections universally accessible.</p>
+          </header>
+          <div class="pillar-carousel" data-pillar-carousel="architecture"></div>
+        </section>
+
+        <section class="work-pillar" aria-labelledby="pillar-narrative">
+          <header class="work-pillar__header">
+            <h2 class="work-pillar__title" id="pillar-narrative">Creative Digital Media Ecosystems</h2>
+            <p class="work-pillar__frame">Translating the spirit of the physical gallery into the digital social landscape through intentional visual storytelling, cohesive campaign designs, and immersive social media strategy.</p>
+          </header>
+          <div class="pillar-carousel" data-pillar-carousel="narrative"></div>
+        </section>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="layout-container">
+        <p>&copy; 2026 Sarah Kim Studio.</p>
+      </div>
+    </footer>
+
+  </div>
+  <script src="js/header.js"></script>
+  <script src="js/projects.js"></script>
+  <script src="js/render-projects.js"></script>
+</body>
+</html>

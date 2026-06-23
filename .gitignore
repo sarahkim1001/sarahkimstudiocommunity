@@ -1,0 +1,6 @@
+.DS_Store
+**/.DS_Store
+
+# Keep only optimized web assets in git (full-res originals stay local)
+media/*
+!media/web/
