@@ -2,6 +2,11 @@ const CAROUSEL_INTERVAL_MS = 2000;
 const CAROUSEL_FADE_MS = 2000;
 const CAROUSEL_PRELOAD_LEAD_MS = 800;
 
+function assetUrl(path) {
+  const root = window.SITE_ROOT || "";
+  return root + path.replace(/^\//, "");
+}
+
 function loadCarouselImage(img, src) {
   if (img.src && img.getAttribute("src") === src) {
     return Promise.resolve(img);
@@ -87,7 +92,7 @@ function startCarousel(images, sources) {
 function createCarouselImages(imageWrap, project) {
   imageWrap.classList.add("project-card__image-wrap--carousel");
 
-  const sources = project.carouselImages;
+  const sources = project.carouselImages.map(assetUrl);
   const images = sources.map((src, index) => {
     const img = document.createElement("img");
     img.alt = project.alt || project.title;
@@ -111,7 +116,7 @@ function createProjectCard(project, options = {}) {
   card.className = "project-card";
 
   if (project.url) {
-    card.href = project.url;
+    card.href = assetUrl(project.url);
   }
 
   const imageWrap = document.createElement("div");
@@ -123,7 +128,7 @@ function createProjectCard(project, options = {}) {
     createCarouselImages(imageWrap, project);
   } else {
     const img = document.createElement("img");
-    img.src = project.image;
+    img.src = assetUrl(project.image);
     img.alt = project.alt || project.title;
     img.className = "project-card__image";
     img.loading = "lazy";
@@ -189,7 +194,7 @@ function renderPillarSpreads() {
 
       const img = document.createElement("img");
       img.className = "catalog-scroll__image";
-      img.src = src;
+      img.src = assetUrl(src);
       img.alt = `${config.alt || "Catalog spread"} ${index + 1} of ${config.images.length}`;
       img.decoding = "async";
 

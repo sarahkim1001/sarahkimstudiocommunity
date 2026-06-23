@@ -3,37 +3,116 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Sarah Kim Studio — community curation, gallery programming, creative documentation, and digital media strategy for art communities.">
-  <title>Sarah Kim Studio — Community Curation &amp; Documentation</title>
+  <meta name="description" content="Sarah Kim Studio — spatial experience, creative documentation, editorial design, and digital strategy for cultural institutions and elevated brands.">
+  <title>Sarah Kim Studio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Hedvig+Letters+Serif&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="layout-wrapper">
 
     <header class="site-header">
       <div class="layout-container">
-        <a href="/" class="site-logo">Sarah Kim Studio</a>
+        <a href="index.html" class="site-logo">Sarah Kim Studio</a>
         <nav class="site-nav" aria-label="Main navigation">
           <ul class="site-nav__list">
-            <li><a href="/work" class="site-nav__link">Work</a></li>
-            <li><a href="/about" class="site-nav__link">About</a></li>
+            <li><a href="about/index.html" class="site-nav__link">About</a></li>
           </ul>
         </nav>
       </div>
     </header>
 
     <main class="site-main site-main--landing">
-      <div class="site-content layout-container">
-        <section class="landing-hero" id="home-content">
-          <div class="landing-header-box">
-            <h1 class="landing-header-box__title">Architecting spaces, conversations, and digital narratives that bring art communities closer together.</h1>
-            <p class="landing-header-box__body">Previously at Qualia Contemporary Art, Palo Alto, CA.</p>
-          </div>
-        </section>
+      <section class="landing-showcase" id="home-content">
+
+        <div
+          class="landing-slideshow"
+          data-landing-slideshow
+          role="img"
+          aria-label="Selected work spanning spatial experience, documentation, editorial design, and digital media"
+        ></div>
+
+        <div class="layout-container landing-showcase__body">
+          <h1 class="landing-tagline">Articulating brand, space, and digital experience for those who value depth.</h1>
+          <p class="landing-credit">Previously at Qualia Contemporary Art, Palo Alto, CA.</p>
+
+          <nav class="landing-index" aria-label="Work areas">
+            <ol class="landing-index__list">
+              <li><a href="#pillar-gathering" class="landing-index__link">Spatial Experience</a></li>
+              <li><a href="#pillar-archive" class="landing-index__link">Creative Archives &amp; Documentation</a></li>
+              <li><a href="#pillar-record" class="landing-index__link">Editorial &amp; Brand Dossiers</a></li>
+              <li><a href="#pillar-architecture" class="landing-index__link">Web &amp; Digital Collections</a></li>
+              <li><a href="#pillar-narrative" class="landing-index__link">Digital Media</a></li>
+            </ol>
+          </nav>
+        </div>
+
+      </section>
+
+      <div class="site-content layout-container" id="work">
+        <p class="work-intro">My practice spans exhibition programming, creative documentation, and digital communication&mdash;for cultural institutions and brands who value intentional craft.</p>
+
+        <div class="work-pillars" aria-label="Work">
+
+          <section class="work-pillar" aria-labelledby="pillar-gathering">
+            <div class="work-pillar__inner">
+              <div class="pillar-carousel" data-pillar-carousel="gathering"></div>
+              <header class="work-pillar__header">
+                <h2 class="work-pillar__title" id="pillar-gathering">Spatial Experience</h2>
+                <p class="work-pillar__frame">Orchestrating environment, flow, and presence&mdash;turning physical spaces into intentional experiences that invite connection and gather community around shared culture.</p>
+              </header>
+            </div>
+          </section>
+
+          <section class="work-pillar" aria-labelledby="pillar-archive">
+            <div class="work-pillar__inner">
+              <div class="pillar-carousel" data-pillar-carousel="archive"></div>
+              <header class="work-pillar__header">
+                <h2 class="work-pillar__title" id="pillar-archive">Creative Archives &amp; Documentation</h2>
+                <p class="work-pillar__frame">Capturing the authentic narrative behind a craft, studio, or brand through intimate photography and cinematography that preserves process, personality, and creative lineage.</p>
+              </header>
+            </div>
+          </section>
+
+          <section class="work-pillar" aria-labelledby="pillar-record">
+            <div class="work-pillar__inner">
+              <div class="pillar-spreads" data-pillar-spreads="record"></div>
+              <header class="work-pillar__header">
+                <h2 class="work-pillar__title" id="pillar-record">Editorial &amp; Brand Dossiers</h2>
+                <p class="work-pillar__frame">Designing refined print and digital publications&mdash;from lookbooks and catalogs to institutional dossiers&mdash;that communicate depth, credibility, and visual authority.</p>
+              </header>
+            </div>
+          </section>
+
+          <section class="work-pillar" aria-labelledby="pillar-architecture">
+            <div class="work-pillar__inner">
+              <div class="pillar-carousel" data-pillar-carousel="architecture"></div>
+              <header class="work-pillar__header">
+                <h2 class="work-pillar__title" id="pillar-architecture">Web &amp; Digital Collections</h2>
+                <p class="work-pillar__frame">Building elegant, accessible digital platforms that bridge inventory systems, collection archives, and brand storytelling into a coherent client-facing experience.</p>
+              </header>
+            </div>
+          </section>
+
+          <section class="work-pillar" aria-labelledby="pillar-narrative">
+            <div class="work-pillar__inner">
+              <div class="pillar-carousel" data-pillar-carousel="narrative"></div>
+              <header class="work-pillar__header">
+                <h2 class="work-pillar__title" id="pillar-narrative">Digital Media</h2>
+                <p class="work-pillar__frame">Extending brand identity into social and campaign design through cohesive visual storytelling, editorial content, and immersive digital ecosystems.</p>
+              </header>
+            </div>
+          </section>
+
+        </div>
       </div>
+
+      <section class="about-cta layout-container" aria-labelledby="about-cta-heading">
+        <p class="about-cta__text" id="about-cta-heading">Want to know more about me and how I work?</p>
+        <a href="about/index.html" class="about-cta__button">Read my bio</a>
+      </section>
     </main>
 
     <footer class="site-footer">
@@ -44,7 +123,10 @@
     </footer>
 
   </div>
-  <script src="/js/header.js"></script>
-  <script src="/js/footer-contacts.js"></script>
+  <script src="js/header.js"></script>
+  <script src="js/footer-contacts.js"></script>
+  <script src="js/landing-slideshow.js"></script>
+  <script src="js/projects.js"></script>
+  <script src="js/render-projects.js"></script>
 </body>
 </html>
