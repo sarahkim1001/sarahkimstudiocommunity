@@ -26,19 +26,19 @@
     </header>
 
     <main class="site-main site-main--landing">
+      <div class="site-content layout-container">
       <section class="landing-hero" id="home-content">
-        <div class="layout-container">
           <div class="landing-header-box">
             <h1 class="landing-header-box__title">Architecting spaces, conversations, and digital narratives that bring art communities closer together.</h1>
+            <p class="landing-header-box__body">Previously at Qualia Contemporary Art, Palo Alto, CA.</p>
           </div>
-        </div>
       </section>
 
       <div id="work" class="work-pillars" aria-label="Work">
 
         <section class="work-pillar" aria-labelledby="pillar-gathering">
           <header class="work-pillar__header">
-            <h2 class="work-pillar__title" id="pillar-gathering">Gallery Curation &amp; Event Architecture</h2>
+            <h2 class="work-pillar__title" id="pillar-gathering">Gallery Operations &amp; Event Architecture</h2>
             <p class="work-pillar__frame">Designing the physical parameters of connection&mdash;managing the logistics, hospitality, and communication frameworks that turn public gallery exhibitions into vibrant community gatherings.</p>
           </header>
           <div class="pillar-carousel" data-pillar-carousel="gathering"></div>
@@ -54,7 +54,7 @@
 
         <section class="work-pillar" aria-labelledby="pillar-record">
           <header class="work-pillar__header">
-            <h2 class="work-pillar__title" id="pillar-record">Art Books, Catalogs, &amp; Institutional Dossiers</h2>
+            <h2 class="work-pillar__title" id="pillar-record">Catalogs &amp; Institutional Dossiers</h2>
             <p class="work-pillar__frame">Crafting refined print and digital scholarship&mdash;from tailored cataloging and layout design to compiling precise dossiers that fulfill the discerning needs of private, public, and institutional collectors.</p>
           </header>
           <div class="pillar-spreads" data-pillar-spreads="record"></div>
@@ -77,16 +77,19 @@
         </section>
 
       </div>
+      </div>
     </main>
 
     <footer class="site-footer">
-      <div class="layout-container">
-        <p>&copy; 2026 Sarah Kim Studio.</p>
+      <div class="layout-container site-footer__inner">
+        <div data-footer-contacts></div>
+        <p class="site-footer__copy">&copy; 2026 Sarah Kim Studio.</p>
       </div>
     </footer>
 
   </div>
   <script src="js/header.js"></script>
+  <script src="js/footer-contacts.js"></script>
   <script src="js/projects.js"></script>
   <script src="js/render-projects.js"></script>
 </body>

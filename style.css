@@ -8,8 +8,8 @@
   --text-color: #000000;
   --link-color: #000000;
   --nav-link-color: #000000;
-  --max-width-content: 85vw;
-  --max-width-pixel: 1100px;
+  --max-width-content: 100%;
+  --max-width-pixel: 96rem;
   --line-height-base: 1.6;
 
   /* Semantic tokens */
@@ -37,7 +37,7 @@
 
   /* Shared layout */
   --max-width: min(var(--max-width-pixel), var(--max-width-content));
-  --layout-padding-x: clamp(1rem, 4vw, 2.5rem);
+  --layout-padding-x: clamp(2rem, 6vw, 5rem);
   --header-height: var(--header-min-height);
 
   /* Landing header box */
@@ -73,8 +73,9 @@
   --work-pillar-title-size: 1.375rem;
   --work-pillar-frame-size: 1rem;
   --pillar-carousel-height: 18rem;
-  --pillar-carousel-max-width: 40rem;
-  --work-pillar-layout-gap: clamp(2rem, 4vw, 3.5rem);
+  --pillar-carousel-max-width: 46rem;
+  --work-pillar-layout-gap: clamp(1rem, 2vw, 1.5rem);
+  --work-pillar-text-max-width: 38rem;
 
   /* Spacing */
   --spacing-xs: 0.5rem;
@@ -101,6 +102,7 @@
   --about-moment-max-width: 30rem;
   --about-moment-radius: 4px;
   --about-layout-gap: 3rem;
+  --about-text-max-width: 36rem;
   --about-block-gap: 1.75rem;
   --about-links-gap: 1.25rem;
   --about-icon-size: 1.375rem;
@@ -210,9 +212,14 @@ ul {
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 var(--layout-padding-x);
+  max-width: none;
+  margin-inline: auto;
+  padding-inline: var(--layout-padding-x);
+  box-sizing: border-box;
+}
+
+.site-content.layout-container {
+  flex: 1;
 }
 
 /* ==========================================================================
@@ -238,8 +245,10 @@ ul {
 
 .site-header .layout-container {
   flex-direction: row;
-  align-items: center;
+  align-items: baseline;
   justify-content: space-between;
+  width: 100%;
+  max-width: none;
   min-height: var(--header-min-height);
   height: auto;
   padding-top: var(--header-padding-y);
@@ -250,11 +259,11 @@ ul {
 .site-logo {
   display: inline-flex;
   flex-shrink: 0;
-  align-items: center;
+  align-items: baseline;
   font-size: var(--logo-font-size);
   font-weight: var(--font-weight-body);
   letter-spacing: 0.02em;
-  line-height: 1.2;
+  line-height: 1.3;
   color: var(--color-text);
   transition: opacity 0.2s ease, font-size 0.35s ease;
 }
@@ -277,12 +286,16 @@ ul {
 
 .site-nav__list {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   gap: var(--spacing-md);
+  margin: 0;
+  padding: 0;
 }
 
 .site-nav__link {
   font-size: var(--font-size-body);
+  line-height: 1.3;
+  letter-spacing: 0.02em;
   color: var(--color-text-muted);
   transition: color 0.2s ease;
 }
@@ -326,12 +339,6 @@ ul {
   flex-direction: column;
   padding-top: var(--landing-hero-padding-top);
   padding-bottom: var(--landing-hero-padding-bottom);
-}
-
-.landing-hero .layout-container {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
 }
 
 .landing-header-box {
@@ -378,11 +385,11 @@ ul {
 
 .work-pillar:has(.pillar-carousel, .pillar-spreads) {
   display: grid;
-  grid-template-columns: minmax(0, min(var(--pillar-carousel-max-width), 48%)) minmax(0, 1fr);
+  grid-template-columns: minmax(0, var(--pillar-carousel-max-width)) minmax(0, var(--work-pillar-text-max-width));
   column-gap: var(--work-pillar-layout-gap);
   row-gap: var(--spacing-md);
   align-items: center;
-  padding-inline: var(--layout-padding-x);
+  justify-content: start;
 }
 
 .work-pillar:nth-child(odd):has(.pillar-carousel, .pillar-spreads) .pillar-carousel,
@@ -407,17 +414,17 @@ ul {
   display: flex;
   flex-direction: column;
   gap: var(--work-pillar-header-gap);
-  max-width: 42rem;
-  margin: 0 auto;
+  max-width: var(--landing-box-max-width);
+  margin: 0;
   width: 100%;
-  padding: 0 var(--layout-padding-x);
+  padding: 0;
 }
 
 .work-pillar:has(.pillar-carousel, .pillar-spreads) .work-pillar__header {
   margin: 0;
   padding: 0;
-  max-width: none;
-  width: auto;
+  max-width: var(--work-pillar-text-max-width);
+  width: 100%;
 }
 
 .work-pillar__label {
@@ -447,6 +454,9 @@ ul {
 }
 
 .pillar-spreads {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
   width: 100%;
   max-width: none;
 }
@@ -486,15 +496,17 @@ ul {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  object-position: center;
+  object-position: left center;
   background-color: var(--color-bg);
 }
 
 .catalog-scroll__hint {
   margin: 0.75rem 0 0;
+  padding: 0;
   font-size: 0.8125rem;
   color: var(--color-text-muted);
   letter-spacing: 0.02em;
+  text-align: left;
 }
 
 .landing-projects .projects-list,
@@ -555,13 +567,13 @@ ul {
   }
 
   .work-pillar:has(.pillar-carousel, .pillar-spreads) .work-pillar__header {
-    max-width: 42rem;
+    max-width: var(--landing-box-max-width);
   }
 }
 
 .landing-projects .project-card__title,
 .work-pillars .project-card__title {
-  padding: 0 var(--layout-padding-x);
+  padding: 0;
   font-size: var(--landing-project-title-size);
 }
 
@@ -690,6 +702,7 @@ a.project-card:hover {
   flex: 1;
   gap: var(--about-block-gap);
   min-width: 0;
+  max-width: var(--about-text-max-width);
 }
 
 .about-greeting {
@@ -1054,6 +1067,20 @@ a.project-card:hover {
   color: var(--color-text-muted);
 }
 
+.site-footer__inner {
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.site-footer__links {
+  padding-top: 0;
+  justify-content: center;
+}
+
+.site-footer__copy {
+  margin: 0;
+}
+
 /* ==========================================================================
    Responsive
    ========================================================================== */
@@ -1075,7 +1102,7 @@ a.project-card:hover {
     --spacing-lg: 1.5rem;
     --spacing-xl: 2.5rem;
     --spacing-main-y: var(--spacing-lg);
-    --layout-padding-x: 1.5rem;
+    --layout-padding-x: 2rem;
     --logo-font-size: 1.25rem;
     --header-padding-y: 0.75rem;
     --header-min-height: calc(var(--logo-font-size) * 1.4 + var(--header-padding-y) * 2);
@@ -1109,7 +1136,7 @@ a.project-card:hover {
   .site-nav__list {
     gap: var(--spacing-sm);
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
   }
 
   .site-main:not(.site-main--landing):not(.site-main--showcase) {
@@ -1169,7 +1196,7 @@ a.project-card:hover {
     --spacing-lg: 1rem;
     --spacing-xl: 2rem;
     --spacing-main-y: var(--spacing-lg);
-    --layout-padding-x: 1rem;
+    --layout-padding-x: 1.5rem;
     --logo-font-size: 1.125rem;
     --header-padding-y: 0.625rem;
     --header-min-height: calc(var(--logo-font-size) * 1.4 + var(--header-padding-y) * 2);

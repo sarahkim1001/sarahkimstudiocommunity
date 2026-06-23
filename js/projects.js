@@ -84,6 +84,7 @@ const PILLAR_CAROUSELS = {
     carouselImages: [
       "media/web/qualiaoutside.jpg",
       "media/web/younheeopening.jpg",
+      "media/web/younheeopening2.jpg",
       "media/web/dancegroup.jpg",
       "media/web/YounheeMainRoomPanel.jpg",
       "media/web/collectorshome.jpg",
