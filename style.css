@@ -938,6 +938,9 @@ a.project-card:hover {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  padding: 0.5rem;
+  min-width: 2.5rem;
+  min-height: 2.5rem;
   color: var(--color-text-muted);
   transition: color 0.2s ease, opacity 0.2s ease;
 }
@@ -949,6 +952,7 @@ a.project-card:hover {
 .about-links__item--pending {
   opacity: 0.4;
   cursor: default;
+  pointer-events: none;
 }
 
 .about-links__icon {
@@ -959,6 +963,7 @@ a.project-card:hover {
   stroke-width: var(--about-icon-stroke);
   stroke-linecap: round;
   stroke-linejoin: round;
+  pointer-events: none;
 }
 
 .about-links__icon-dot {
@@ -1242,6 +1247,8 @@ a.project-card:hover {
 .site-footer__links {
   padding-top: 0;
   justify-content: center;
+  position: relative;
+  z-index: 2;
 }
 
 .site-footer__copy {
