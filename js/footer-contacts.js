@@ -9,7 +9,7 @@
     return src.includes("../") ? "../" : "";
   }
 
-  const resumeUrl = `${getRoot()}media/web/creativeoperations.png`;
+  const resumeUrl = `${getRoot()}media/web/Sarah_Kim_Human_Centered_Designer_2026.png`;
 
   const FOOTER_CONTACTS_MARKUP = `
   <nav class="about-links site-footer__links" aria-label="Contact links">
