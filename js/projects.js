@@ -27,8 +27,8 @@ const HOME_PROJECTS = [
     category: "Qualia Contemporary Art",
     description: "Media, documentation, and community outreach for a contemporary art gallery.",
     title: "Qualia Contemporary Art",
-    image: "media/web/qualiaoutside.jpg",
-    alt: "Qualia Contemporary Art — gallery storefront",
+    image: "media/qualiagrid.png",
+    alt: "Qualia Contemporary Art — Instagram grid of gallery exhibitions and artist features",
     url: "qualia-digital-archive.html",
     disclaimer: PORTFOLIO_CREDIT
   },
