@@ -1,15 +1,11 @@
 (function () {
   const SLIDES = [
-    { src: "media/web/younheefloordetail.jpg" },
-    { src: "media/web/younheeopening.jpg" },
-    { src: "media/web/collectorshome.jpg" },
-    { src: "media/web/YounheeMainRoomPanel.jpg" },
-    { src: "media/web/collectorhome2.jpg" },
     { src: "media/web/yuliastudioforhomepage.jpg" },
-    { src: "media/web/Younheestairs.jpg" },
+    { src: "media/web/stellastudio.jpg" },
     { src: "media/web/peachpit.jpg" },
-    { src: "media/web/IGGRID.png" },
-    { src: "media/web/qualiaoutside.jpg" }
+    { src: "media/web/chuchu4.png" },
+    { src: "media/web/reachingboat.jpg" },
+    { src: "media/web/younheefloordetail.jpg" }
   ];
 
   const INTERVAL_MS = 2500;

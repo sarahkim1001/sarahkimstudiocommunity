@@ -4,25 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="referrer" content="strict-origin-when-cross-origin">
-  <title>Qualia Digital Archive | Sarah Kim Studio</title>
+  <title>Qualia Contemporary Art | Sarah Kim Studio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Hedvig+Letters+Serif&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body data-nav-active="work">
   <div class="layout-wrapper layout-wrapper--showcase">
 
     <header class="site-header">
-      <div class="layout-container">
-        <a href="index.html" class="site-logo">Sarah Kim Studio</a>
-        <nav class="site-nav" aria-label="Main navigation">
-          <ul class="site-nav__list">
-            <li><a href="index.html#work" class="site-nav__link">Work</a></li>
-            <li><a href="about/index.html" class="site-nav__link">About</a></li>
-          </ul>
-        </nav>
-      </div>
+      <div data-site-nav></div>
     </header>
 
     <main class="site-main site-main--showcase">
@@ -32,16 +24,15 @@
           <p class="showcase-intro__back">
             <a href="index.html#work" class="text-link">← Back to Work</a>
           </p>
-          <h1 class="showcase-intro__title">Qualia Digital Archive</h1>
-          <p class="showcase-intro__subtitle">Creative Documentation &amp; Media Strategy</p>
-          <p class="showcase-intro__lede">A curated visual archive of studio practice, exhibition space, community activation, and design systems — documented with intention at <a href="https://qualiagallery.com" class="text-link" target="_blank" rel="noopener noreferrer">Qualia Contemporary Art</a>.</p>
+          <p class="portfolio-credit">All materials shown were produced for Qualia Contemporary Art and remain the property of Qualia Contemporary Art. Artworks and exhibition imagery &copy; respective artists and Qualia Contemporary Art. Digital media, documentation, and communications shown here were created by Sarah Kim in her role supporting outreach, programming documentation, and visual storytelling. Displayed with permission for portfolio purposes only.</p>
+          <h1 class="showcase-intro__title">Qualia Contemporary Art</h1>
+          <p class="showcase-intro__subtitle">Selected Visual Work</p>
         </header>
 
         <!-- Pillar 1: The Studio & The Artist -->
         <section class="showcase-pillar" aria-labelledby="pillar-studio">
           <div class="showcase-pillar__header">
             <h2 class="showcase-pillar__title" id="pillar-studio">The Studio &amp; The Artist</h2>
-            <p class="showcase-pillar__frame">Capturing the raw creative process through intimate workspace documentation.</p>
           </div>
 
           <div class="showcase-masonry showcase-masonry--studio">
@@ -51,6 +42,7 @@
                 alt="Artist workspace — intimate studio environment"
                 loading="lazy"
               >
+              <figcaption class="showcase-caption">Artist workspace — intimate studio environment</figcaption>
             </figure>
 
             <figure class="showcase-item">
@@ -59,6 +51,7 @@
                 alt="Staircase within the artist studio"
                 loading="lazy"
               >
+              <figcaption class="showcase-caption">Staircase within the artist studio</figcaption>
             </figure>
 
             <figure class="showcase-item">
@@ -67,6 +60,7 @@
                 alt="Art supplies arranged in the studio"
                 loading="lazy"
               >
+              <figcaption class="showcase-caption">Art supplies arranged in the studio</figcaption>
             </figure>
 
             <figure class="showcase-item">
@@ -75,15 +69,15 @@
                 alt="Studio interior — creative workspace detail"
                 loading="lazy"
               >
+              <figcaption class="showcase-caption">Studio interior — creative workspace detail</figcaption>
             </figure>
           </div>
         </section>
 
-        <!-- Pillar 2: The Space & Exhibition -->
+        <!-- Pillar 2: The Space, Exhibitions & Community -->
         <section class="showcase-pillar" aria-labelledby="pillar-space">
           <div class="showcase-pillar__header">
-            <h2 class="showcase-pillar__title" id="pillar-space">The Space &amp; Exhibition</h2>
-            <p class="showcase-pillar__frame">Clear, spacious documentation of architectural gallery layouts and direct lighting.</p>
+            <h2 class="showcase-pillar__title" id="pillar-space">Documentation: The Space, Exhibitions &amp; Community</h2>
           </div>
 
           <div class="showcase-masonry showcase-masonry--space">
@@ -93,6 +87,7 @@
                 alt="Qualia Contemporary Art — exterior establishing view"
                 loading="lazy"
               >
+              <figcaption class="showcase-caption">Qualia Contemporary Art — exterior establishing view</figcaption>
             </figure>
 
             <figure class="showcase-item">
@@ -101,6 +96,7 @@
                 alt="Exhibition shelf — installation detail"
                 loading="lazy"
               >
+              <figcaption class="showcase-caption">Exhibition shelf — installation detail</figcaption>
             </figure>
 
             <figure class="showcase-item">
@@ -109,6 +105,7 @@
                 alt="Artwork detail — reaching boat painting"
                 loading="lazy"
               >
+              <figcaption class="showcase-caption">Artwork detail — reaching boat painting</figcaption>
             </figure>
 
             <figure class="showcase-item showcase-item--span-2">
@@ -117,32 +114,7 @@
                 alt="Main room panel — architectural gallery layout"
                 loading="lazy"
               >
-            </figure>
-          </div>
-        </section>
-
-        <!-- Pillar 3: Community, Engagement, & Outreach -->
-        <section class="showcase-pillar" aria-labelledby="pillar-community">
-          <div class="showcase-pillar__header">
-            <h2 class="showcase-pillar__title" id="pillar-community">Community, Engagement, &amp; Outreach</h2>
-            <p class="showcase-pillar__frame">Documenting live multi-sensory programming and authentic human interaction within cultural spaces.</p>
-          </div>
-
-          <div class="showcase-masonry showcase-masonry--community">
-            <figure class="showcase-item showcase-item--span-2">
-              <img
-                src="media/web/dancegroup.jpg"
-                alt="Dance group performance during community programming"
-                loading="lazy"
-              >
-            </figure>
-
-            <figure class="showcase-item">
-              <img
-                src="media/web/dancer.jpg"
-                alt="Solo dancer — live performance moment"
-                loading="lazy"
-              >
+              <figcaption class="showcase-caption">Main room panel — architectural gallery layout</figcaption>
             </figure>
 
             <figure class="showcase-item showcase-item--span-2">
@@ -151,6 +123,7 @@
                 alt="Exhibition opening — guests and gallery atmosphere"
                 loading="lazy"
               >
+              <figcaption class="showcase-caption">Exhibition opening — guests and gallery atmosphere</figcaption>
             </figure>
 
             <figure class="showcase-item">
@@ -159,6 +132,7 @@
                 alt="Collector home visit — artwork in domestic setting"
                 loading="lazy"
               >
+              <figcaption class="showcase-caption">Collector home visit — artwork in domestic setting</figcaption>
             </figure>
 
             <figure class="showcase-item showcase-item--span-2">
@@ -167,6 +141,7 @@
                 alt="Collectors at home with acquired works"
                 loading="lazy"
               >
+              <figcaption class="showcase-caption">Collectors at home with acquired works</figcaption>
             </figure>
 
             <figure class="showcase-item">
@@ -175,15 +150,15 @@
                 alt="Human connection — embrace between gallery visitors"
                 loading="lazy"
               >
+              <figcaption class="showcase-caption">Human connection — embrace between gallery visitors</figcaption>
             </figure>
           </div>
         </section>
 
-        <!-- Pillar 4: Digital Curation & Visual Outreach -->
+        <!-- Pillar 4: Digital Media & Visual Outreach -->
         <section class="showcase-pillar" aria-labelledby="pillar-graphics">
           <div class="showcase-pillar__header">
-            <h2 class="showcase-pillar__title" id="pillar-graphics">Digital Curation &amp; Visual Outreach</h2>
-            <p class="showcase-pillar__frame">Creating the visual touchpoints for exhibition campaigns. By pairing short-form film with clean typography for posters and newsletters, this media ecosystem expands audience reach and drives engagement with the gallery's collection.</p>
+            <h2 class="showcase-pillar__title" id="pillar-graphics">Digital Media &amp; Visual Outreach</h2>
           </div>
 
           <div class="showcase-masonry showcase-masonry--graphics">
@@ -195,6 +170,7 @@
                 width="2318"
                 height="1708"
               >
+              <figcaption class="showcase-caption">Instagram grid layout — social media visual system</figcaption>
             </figure>
 
             <figure class="showcase-item showcase-item--portrait-media">
@@ -205,6 +181,7 @@
                 width="1587"
                 height="2245"
               >
+              <figcaption class="showcase-caption">Refined dual-column gallery poster — typographic print design</figcaption>
             </figure>
 
             <figure class="showcase-item showcase-item--portrait-media">
@@ -215,6 +192,7 @@
                 width="1080"
                 height="1920"
               >
+              <figcaption class="showcase-caption">Exhibition motion graphic — animated social media asset</figcaption>
             </figure>
 
             <figure class="showcase-item showcase-item--portrait-media">
@@ -235,6 +213,7 @@
                 <span class="showcase-embed__play" aria-hidden="true"></span>
                 <span class="showcase-embed__label">Watch on YouTube</span>
               </a>
+              <figcaption class="showcase-caption">Qualia Contemporary Art — short-form editorial video</figcaption>
             </figure>
 
             <figure class="showcase-item showcase-item--span-2">
@@ -245,6 +224,7 @@
                 width="2748"
                 height="1590"
               >
+              <figcaption class="showcase-caption">Emergency ticket — typographic event design</figcaption>
             </figure>
 
             <div class="showcase-row">
@@ -256,6 +236,7 @@
                   width="1080"
                   height="1350"
                 >
+                <figcaption class="showcase-caption">Editorial social post — slide 1</figcaption>
               </figure>
               <figure class="showcase-item showcase-item--portrait-media">
                 <img
@@ -265,6 +246,7 @@
                   width="1080"
                   height="1350"
                 >
+                <figcaption class="showcase-caption">Editorial social post — slide 2</figcaption>
               </figure>
               <figure class="showcase-item showcase-item--portrait-media">
                 <img
@@ -274,6 +256,7 @@
                   width="1080"
                   height="1350"
                 >
+                <figcaption class="showcase-caption">Editorial social post — slide 3</figcaption>
               </figure>
             </div>
           </div>
@@ -283,12 +266,15 @@
     </main>
 
     <footer class="site-footer">
-      <div class="layout-container">
-        <p>&copy; 2026 Sarah Kim Studio.</p>
+      <div class="layout-container site-footer__inner">
+        <div data-footer-contacts></div>
+        <p class="site-footer__copy">&copy; 2026 Sarah Kim Studio.</p>
       </div>
     </footer>
 
   </div>
-  <script src="js/header.js"></script>
+  <script src="js/site-root.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/footer-contacts.js"></script>
 </body>
 </html>

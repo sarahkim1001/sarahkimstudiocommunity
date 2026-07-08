@@ -4,7 +4,8 @@ const CAROUSEL_PRELOAD_LEAD_MS = 800;
 
 function assetUrl(path) {
   const root = window.SITE_ROOT || "";
-  return root + path.replace(/^\//, "");
+  const normalized = path.replace(/^\//, "");
+  return root + normalized.split("/").map((segment) => encodeURIComponent(segment)).join("/");
 }
 
 function loadCarouselImage(img, src) {
@@ -111,6 +112,89 @@ function createCarouselImages(imageWrap, project) {
   startCarousel(images, sources);
 }
 
+function createWorkBlock(project) {
+  const isPlaceholder = project.placeholder === true;
+  const hasDisclaimer = Boolean(project.disclaimer);
+  const hasLink = !isPlaceholder && project.url;
+  const useArticle = hasDisclaimer || isPlaceholder || !hasLink;
+  const block = document.createElement(useArticle ? "article" : "a");
+  block.className = "work-block";
+
+  if (isPlaceholder) {
+    block.classList.add("work-block--placeholder");
+  }
+
+  if (hasDisclaimer) {
+    block.classList.add("work-block--has-credit");
+  }
+
+  if (hasLink && !useArticle) {
+    block.href = assetUrl(project.url);
+  }
+
+  const category = document.createElement("p");
+  category.className = "work-block__category";
+  category.textContent = project.category || "";
+
+  const description = document.createElement("p");
+  description.className = "work-block__description";
+  description.textContent = project.description || "";
+
+  const imageWrap = document.createElement("div");
+  imageWrap.className = "work-block__image-wrap";
+
+  if (isPlaceholder) {
+    const label = document.createElement("span");
+    label.className = "work-block__placeholder-label";
+    label.textContent = project.title || "Coming Soon";
+    imageWrap.appendChild(label);
+  } else {
+    const img = document.createElement("img");
+    img.src = assetUrl(project.image);
+    img.alt = project.alt || project.title;
+    img.className = project.imageFaded
+      ? "work-block__image work-block__image--faded"
+      : "work-block__image";
+    img.loading = "lazy";
+    img.decoding = "async";
+    imageWrap.appendChild(img);
+  }
+
+  if (hasLink && useArticle) {
+    const link = document.createElement("a");
+    link.href = assetUrl(project.url);
+    link.className = "work-block__link";
+    link.appendChild(category);
+    link.appendChild(description);
+    link.appendChild(imageWrap);
+    block.appendChild(link);
+  } else {
+    block.appendChild(category);
+    block.appendChild(description);
+    block.appendChild(imageWrap);
+  }
+
+  if (hasDisclaimer) {
+    const credit = document.createElement("p");
+    credit.className = "work-block__credit";
+    credit.textContent = project.disclaimer;
+    block.appendChild(credit);
+  }
+
+  return block;
+}
+
+function renderWorkGrid() {
+  const container = document.querySelector("[data-work-grid]");
+  if (!container) {
+    return;
+  }
+
+  HOME_PROJECTS.forEach((project) => {
+    container.appendChild(createWorkBlock(project));
+  });
+}
+
 function createProjectCard(project, options = {}) {
   const card = document.createElement(project.url ? "a" : "article");
   card.className = "project-card";
@@ -148,75 +232,23 @@ function createProjectCard(project, options = {}) {
 
 function renderProjects() {
   document.querySelectorAll("[data-projects-list]").forEach((container) => {
-    const pillarId = container.dataset.pillar;
     const useCarousel = container.hasAttribute("data-use-carousel");
 
-    const projects = pillarId
-      ? PROJECTS.filter((project) => project.pillar === pillarId)
-      : PROJECTS;
-
-    projects.forEach((project) => {
+    HOME_PROJECTS.filter((project) => !project.placeholder).forEach((project) => {
       container.appendChild(createProjectCard(project, { useCarousel }));
     });
   });
 }
 
 function renderPillarCarousels() {
-  document.querySelectorAll("[data-pillar-carousel]").forEach((container) => {
-    const config = PILLAR_CAROUSELS[container.dataset.pillarCarousel];
-    if (!config?.carouselImages?.length) {
-      return;
-    }
-
-    const imageWrap = document.createElement("div");
-    imageWrap.className = "project-card__image-wrap";
-    createCarouselImages(imageWrap, config);
-    container.appendChild(imageWrap);
-  });
+  document.querySelectorAll("[data-pillar-carousel]").forEach(() => {});
 }
 
 function renderPillarSpreads() {
-  document.querySelectorAll("[data-pillar-spreads]").forEach((container) => {
-    const config = PILLAR_SPREADS[container.dataset.pillarSpreads];
-    if (!config?.images?.length) {
-      return;
-    }
-
-    const scroll = document.createElement("div");
-    scroll.className = "catalog-scroll";
-    scroll.setAttribute("role", "region");
-    scroll.setAttribute("aria-label", config.label || "Catalog spreads");
-    scroll.setAttribute("tabindex", "0");
-
-    config.images.forEach((src, index) => {
-      const item = document.createElement("figure");
-      item.className = "catalog-scroll__item";
-
-      const img = document.createElement("img");
-      img.className = "catalog-scroll__image";
-      img.src = assetUrl(src);
-      img.alt = `${config.alt || "Catalog spread"} ${index + 1} of ${config.images.length}`;
-      img.decoding = "async";
-
-      if (index === 0) {
-        img.fetchPriority = "high";
-      } else {
-        img.loading = "lazy";
-      }
-
-      item.appendChild(img);
-      scroll.appendChild(item);
-    });
-
-    const hint = document.createElement("p");
-    hint.className = "catalog-scroll__hint";
-    hint.textContent = "Scroll to browse spreads";
-
-    container.appendChild(scroll);
-    container.appendChild(hint);
-  });
+  document.querySelectorAll("[data-pillar-spreads]").forEach(() => {});
 }
 
+renderWorkGrid();
 renderProjects();
 renderPillarCarousels();
 renderPillarSpreads();

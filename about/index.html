@@ -10,22 +10,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Hedvig+Letters+Serif&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../style.css">
 </head>
-<body>
+<body data-nav-active="about">
   <div class="layout-wrapper">
 
     <header class="site-header">
-      <div class="layout-container">
-        <a href="../index.html" class="site-logo">Sarah Kim Studio</a>
-        <nav class="site-nav" aria-label="Main navigation">
-          <ul class="site-nav__list">
-            <li><a href="../index.html#work" class="site-nav__link">Work</a></li>
-            <li><a href="index.html" class="site-nav__link site-nav__link--active">About</a></li>
-          </ul>
-        </nav>
-      </div>
+      <div data-site-nav></div>
     </header>
 
-    <main class="site-main">
+    <main class="site-main site-main--about">
       <div class="layout-container">
         <section class="content-section about-layout" id="about-content">
 
@@ -81,7 +73,7 @@
                   <circle class="about-links__icon-dot" cx="17.25" cy="6.75" r="0.75"/>
                 </svg>
               </a>
-              <a href="../media/web/Sarah_Kim_Human_Centered_Designer_2026.png" class="about-links__item" aria-label="Resume" target="_blank" rel="noopener noreferrer">
+              <a href="../media/GrowthDevelopment.png" class="about-links__item" aria-label="Resume" target="_blank" rel="noopener noreferrer">
                 <svg class="about-links__icon" viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M8 4h6l4 4v12a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1z"/>
                   <path d="M14 4v4h4"/>
@@ -89,6 +81,8 @@
                 </svg>
               </a>
             </nav>
+
+            <a href="../start-a-project.html" class="about-cta__button about-cta__button--standalone">Let&rsquo;s Work Together</a>
 
             <figure class="about-moment">
               <img
@@ -115,7 +109,7 @@
 
   </div>
   <script src="../js/site-root.js"></script>
-  <script src="../js/header.js"></script>
+  <script src="../js/nav.js"></script>
   <script src="../js/footer-contacts.js"></script>
 </body>
 </html>
