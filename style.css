@@ -146,7 +146,7 @@
   --showcase-embed-radius: 4px;
 
   /* Institutional work grid */
-  --work-grid-max-width: 58rem;
+  --work-grid-max-width: 42rem;
   --work-grid-gap-x: 3rem;
   --work-grid-gap-y: 4rem;
   --work-grid-offset: 8rem;
@@ -646,11 +646,11 @@ ul {
   scroll-margin-top: var(--header-min-height);
 }
 
-/* Institutional 2×2 work grid */
+/* Single-column centered work grid */
 .work-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--work-grid-gap-y) var(--work-grid-gap-x);
+  grid-template-columns: 1fr;
+  gap: var(--work-grid-gap-y);
   width: 100%;
   max-width: var(--work-grid-max-width);
   margin-inline: auto;
