@@ -10,5 +10,12 @@ const HOME_PROJECTS = [
     alt: "Qualia Contemporary Art — Instagram grid of gallery exhibitions and artist features",
     url: "qualia-digital-archive.html",
     disclaimer: PORTFOLIO_CREDIT
+  },
+  {
+    category: "AI Video Generation",
+    description: "Google Veo short films and short-form content for @mavalache — classical romance aesthetics, black-and-white grain, prompting research, and 1,000+ followers in one month.",
+    title: "Mavalache",
+    image: "media/her.gif",
+    alt: "Laure — Mavalache AI short film, black-and-white literature-inspired aesthetic"
   }
 ];

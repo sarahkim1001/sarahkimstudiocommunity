@@ -4,6 +4,8 @@
     { "source": "/about.html", "destination": "/about", "permanent": true },
     { "source": "/work", "destination": "/#work", "permanent": true },
     { "source": "/work/", "destination": "/#work", "permanent": true },
-    { "source": "/work/index.html", "destination": "/#work", "permanent": true }
+    { "source": "/work/index.html", "destination": "/#work", "permanent": true },
+    { "source": "/start-a-project", "destination": "/contact.html", "permanent": true },
+    { "source": "/start-a-project.html", "destination": "/contact.html", "permanent": true }
   ]
 }

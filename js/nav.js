@@ -19,7 +19,7 @@
     if (path.endsWith("/about") || path.includes("/about/")) {
       return "about";
     }
-    if (path.includes("start-a-project")) {
+    if (path.includes("contact") || path.includes("start-a-project")) {
       return "contact";
     }
     return "work";
@@ -46,7 +46,7 @@
       </a>
       <nav class="site-nav site-nav--right" aria-label="Contact navigation">
         <ul class="site-nav__list">
-          <li><a href="${root}start-a-project.html" class="site-nav__link${linkClass(active, "contact")}">Start a Project</a></li>
+          <li><a href="${root}contact.html" class="site-nav__link${linkClass(active, "contact")}">Contact</a></li>
         </ul>
       </nav>
     </div>

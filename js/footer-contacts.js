@@ -9,7 +9,7 @@
     return src.includes("../") ? "../" : "";
   }
 
-  const resumeUrl = `${getRoot()}media/GrowthDevelopment.png`;
+  const resumeUrl = `${getRoot()}media/CreativeMarketingResume2026.pdf`;
 
   const FOOTER_CONTACTS_MARKUP = `
   <nav class="about-links site-footer__links" aria-label="Contact links">
