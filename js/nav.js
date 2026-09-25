@@ -40,9 +40,8 @@
           <li><a href="${root}about/index.html" class="site-nav__link${linkClass(active, "about")}">About</a></li>
         </ul>
       </nav>
-      <a href="${root}index.html" class="site-wordmark" aria-label="Sarah Kim Studio — Home">
+      <a href="${root}index.html" class="site-wordmark" aria-label="Sarah Kim — Home">
         <span class="site-wordmark__line">Sarah Kim</span>
-        <span class="site-wordmark__line">Studio</span>
       </a>
       <nav class="site-nav site-nav--right" aria-label="Contact navigation">
         <ul class="site-nav__list">
