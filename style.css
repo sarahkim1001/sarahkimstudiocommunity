@@ -17,7 +17,8 @@
   --color-text: var(--text-color);
   --color-text-muted: #444444;
   --color-nav-muted: #6f6f6c;
-  --color-border: #e8e8e8;
+  --color-border: #e6dcd4;
+  --color-line-warm: #e0d0c6;
   --color-accent: #111111;
   --color-link: var(--link-color);
 
@@ -26,6 +27,8 @@
   --font-sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
   --font-mono: "SF Mono", ui-monospace, Menlo, Consolas, monospace;
   --font-serif: "Instrument Serif", "Iowan Old Style", Georgia, serif;
+  --color-hero-tint: #f5ece7;
+  --color-section-tint: #eadbd1;
   --headline-size: clamp(1.75rem, 3.2vw, 2.75rem);
   --headline-weight: 300;
   --headline-line-height: 1.25;
@@ -200,6 +203,11 @@ body {
   flex-direction: column;
 }
 
+::selection {
+  background-color: #dfc6b9;
+  color: var(--color-text);
+}
+
 img {
   max-width: 100%;
   display: block;
@@ -260,7 +268,7 @@ ul {
   left: 0;
   right: 0;
   z-index: 100;
-  background-color: var(--color-bg);
+  background-color: var(--color-hero-tint);
 }
 
 .site-header__grid {
@@ -353,6 +361,7 @@ ul {
 
 .site-main--about,
 .site-main--contact {
+  background-color: var(--color-hero-tint);
   padding: calc(var(--header-min-height) + 3rem) 0 var(--spacing-xl);
 }
 
@@ -432,10 +441,10 @@ ul {
 .about-skills {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.25rem;
   margin: 1rem 0;
-  padding-top: 1rem;
-  border-top: 1px solid var(--color-text);
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  background-color: var(--color-section-tint);
 }
 
 .about-skills__list {
@@ -862,6 +871,7 @@ a.work-block:hover {
 .home-hero {
   padding-top: clamp(2.5rem, 6vw, 5rem);
   padding-bottom: clamp(4rem, 9vw, 8rem);
+  background-color: var(--color-hero-tint);
 }
 
 .home-hero__meta {
@@ -870,18 +880,7 @@ a.work-block:hover {
   justify-content: space-between;
   gap: 0.5rem 2rem;
   padding-bottom: 1rem;
-  border-bottom: 1px solid #d9d6cf;
-}
-
-.home-hero__status::before {
-  content: "";
-  display: inline-block;
-  width: 0.45rem;
-  height: 0.45rem;
-  margin-right: 0.5rem;
-  border-radius: 50%;
-  background-color: #3f7d4e;
-  vertical-align: 0.05em;
+  border-bottom: 1px solid var(--color-line-warm);
 }
 
 .home-hero__body {
@@ -965,7 +964,22 @@ a.work-block:hover {
   top: 0;
   left: var(--layout-padding-x);
   right: var(--layout-padding-x);
-  border-top: 1px solid #d9d6cf;
+  border-top: 1px solid var(--color-line-warm);
+}
+
+.home-row--tint {
+  padding-top: clamp(3.5rem, 7vw, 6rem);
+  padding-bottom: clamp(3.5rem, 7vw, 6rem);
+  background-color: var(--color-section-tint);
+}
+
+.home-row--tint::before,
+.home-row--tint + .home-row::before {
+  display: none;
+}
+
+.home-row--tint + .home-row {
+  padding-top: clamp(3.5rem, 7vw, 6rem);
 }
 
 .home-capabilities__grid {
@@ -1070,7 +1084,7 @@ a.work-block:hover {
 }
 
 .home-closing {
-  background-color: #efece6;
+  background-color: var(--color-hero-tint);
   color: #2a2926;
 }
 
@@ -2016,6 +2030,26 @@ a.project-card:hover {
   flex-direction: column;
   gap: clamp(2.5rem, 5vw, 4rem);
   width: 100%;
+  background-color: var(--color-hero-tint);
+  box-shadow: 0 0 0 100vmax var(--color-hero-tint);
+  clip-path: inset(-100vmax -100vmax calc(var(--showcase-pillar-gap) * -1) -100vmax);
+}
+
+.case-metrics,
+.case-feature,
+.case-channels {
+  box-shadow: 0 0 0 100vmax var(--band-color);
+  clip-path: inset(0 -100vmax);
+  background-color: var(--band-color);
+}
+
+.case-metrics {
+  --band-color: var(--color-hero-tint);
+}
+
+.case-feature,
+.case-channels {
+  --band-color: var(--color-section-tint);
 }
 
 .case-hero__top {
@@ -2025,7 +2059,7 @@ a.project-card:hover {
   justify-content: space-between;
   gap: 0.75rem 1.5rem;
   padding-bottom: 1rem;
-  border-bottom: 1px solid var(--color-text);
+  border-bottom: 1px solid var(--color-line-warm);
 }
 
 .case-hero__back,
@@ -2101,9 +2135,8 @@ a.project-card:hover {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: clamp(1.5rem, 4vw, 3rem);
   width: 100%;
-  padding: clamp(1.75rem, 3vw, 2.5rem) 0;
-  border-top: 1px solid var(--color-border);
-  border-bottom: 1px solid var(--color-border);
+  padding: clamp(1.75rem, 3vw, 2.5rem) 0 clamp(3rem, 6vw, 4.5rem);
+  border-top: 1px solid var(--color-line-warm);
 }
 
 .case-metrics__item {
@@ -2301,7 +2334,7 @@ a.project-card:hover {
   gap: clamp(2rem, 5vw, 4rem);
   align-items: start;
   width: 100%;
-  padding-top: clamp(1rem, 2vw, 2rem);
+  padding-block: clamp(3rem, 6vw, 5rem);
 }
 
 .case-feature__media {
@@ -2394,7 +2427,7 @@ a.project-card:hover {
   flex-direction: column;
   gap: var(--spacing-md);
   width: 100%;
-  padding-top: clamp(1rem, 2vw, 2rem);
+  padding-block: clamp(3rem, 6vw, 5rem);
 }
 
 .case-channels__header {
@@ -2642,7 +2675,7 @@ a.project-card:hover {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
-  border-bottom: 1px solid var(--color-text);
+  border-bottom: 1px solid #d6c3b7;
   padding: 1.25rem 0;
 }
 
