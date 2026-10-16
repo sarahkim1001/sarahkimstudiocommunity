@@ -869,7 +869,7 @@ a.work-block:hover {
 }
 
 .home-hero {
-  padding-top: clamp(2.5rem, 6vw, 5rem);
+  padding-top: clamp(8rem, 12vw, 11rem);
   padding-bottom: clamp(4rem, 9vw, 8rem);
   background-color: var(--color-hero-tint);
 }
@@ -886,9 +886,9 @@ a.work-block:hover {
 .home-hero__body {
   display: grid;
   grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
-  align-items: end;
+  align-items: start;
   gap: clamp(2.5rem, 6vw, 6rem);
-  padding-top: clamp(3rem, 6vw, 5rem);
+  padding-top: 0;
 }
 
 .home-hero__text {
