@@ -869,7 +869,7 @@ a.work-block:hover {
 }
 
 .home-hero {
-  padding-top: clamp(8rem, 12vw, 11rem);
+  padding-top: clamp(6.5rem, 10vw, 9rem);
   padding-bottom: clamp(4rem, 9vw, 8rem);
   background-color: var(--color-hero-tint);
 }
