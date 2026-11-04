@@ -23,16 +23,16 @@
   --color-link: var(--link-color);
 
   /* Typography */
-  --font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --font-sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --font-mono: "SF Mono", ui-monospace, Menlo, Consolas, monospace;
-  --font-serif: "Instrument Serif", "Iowan Old Style", Georgia, serif;
+  --font-family: "Inter Tight", system-ui, sans-serif;
+  --font-sans: "Inter Tight", system-ui, sans-serif;
+  --font-mono: var(--font-sans);
+  --font-serif: "Cormorant Garamond", Georgia, serif;
   --color-hero-tint: var(--bg-color);
   --color-section-tint: var(--bg-color);
   --headline-size: clamp(1.75rem, 3.2vw, 2.75rem);
   --headline-weight: 300;
   --headline-line-height: 1.25;
-  --headline-letter-spacing: -0.005em;
+  --headline-letter-spacing: -0.03em;
   --headline-color: #2a2926;
   --font-weight-body: 400;
   --font-weight-display: 400;
@@ -391,6 +391,7 @@ ul {
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
+  overflow: hidden;
 }
 
 .about-portrait__image {
@@ -399,7 +400,7 @@ ul {
   aspect-ratio: 4 / 5;
   height: auto;
   object-fit: cover;
-  object-position: center 35%;
+  object-position: center center;
 }
 
 .about-portrait__caption {
@@ -424,6 +425,7 @@ ul {
 
 .about-title {
   margin: 0 0 0.5rem;
+  font-family: var(--font-serif);
   font-size: var(--headline-size);
   font-weight: var(--headline-weight);
   line-height: var(--headline-line-height);
@@ -464,6 +466,7 @@ ul {
 
 .about-skills__title {
   margin: 0.25rem 0 0;
+  font-family: var(--font-serif);
   font-size: 1.0625rem;
   font-weight: 400;
   line-height: 1.3;
@@ -829,6 +832,7 @@ a.work-block:hover {
   padding: 1.25rem 2rem;
   font-family: var(--font-sans);
   font-size: 0.875rem;
+  font-weight: 500;
   line-height: 1.3;
   letter-spacing: 0.06em;
   color: var(--color-text);
@@ -914,24 +918,24 @@ a.work-block:hover {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 30%;
+  object-position: 68% center;
 }
 
 .home-hero__headline {
   margin: 0;
-  max-width: 100%;
+  max-width: 14em;
   font-family: var(--font-serif);
-  font-size: clamp(3.4rem, 5.4vw + 0.35rem, 6.35rem);
-  font-weight: 400;
+  font-size: clamp(2.35rem, 3.2vw + 0.4rem, 4.15rem);
+  font-weight: 300;
   font-style: normal;
   line-height: 1.02;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.045em;
   color: var(--headline-color);
   text-wrap: balance;
 }
 
 .home-hero__roles {
-  margin: 0 0 1rem;
+  margin: 0;
   font-size: 0.875rem;
   font-weight: 300;
   line-height: 1.5;
@@ -949,6 +953,50 @@ a.work-block:hover {
     justify-self: stretch;
     order: -1;
   }
+}
+
+.home-practice {
+  position: relative;
+  padding-top: clamp(2.25rem, 4.5vw, 3.5rem);
+  padding-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+
+.home-practice::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: var(--layout-padding-x);
+  right: var(--layout-padding-x);
+  border-top: 1px solid var(--color-line-warm);
+}
+
+.home-practice__list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1.75rem, 4vw, 3.5rem);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.home-practice__item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  min-width: 0;
+}
+
+.home-practice__label {
+  color: #a7a7a4;
+}
+
+.home-practice__text {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--color-text);
 }
 
 .home-row {
@@ -1000,8 +1048,38 @@ a.work-block:hover {
   max-width: 28rem;
 }
 
+.home-capability__swatch {
+  display: block;
+  width: 1cm;
+  height: 1cm;
+  min-width: 1cm;
+  max-width: 1cm;
+  min-height: 1cm;
+  max-height: 1cm;
+  flex: 0 0 1cm;
+  align-self: flex-start;
+  border-radius: 0;
+}
+
+.home-capability__swatch--1 {
+  background-color: #1c1c1c;
+}
+
+.home-capability__swatch--2 {
+  background-color: #8c3a2f;
+}
+
+.home-capability__swatch--3 {
+  background-color: #3d4f45;
+}
+
+.home-capability__swatch--4 {
+  background-color: #c4a574;
+}
+
 .home-capability__title {
   margin: 0.15rem 0 0;
+  font-family: var(--font-serif);
   font-size: 1.25rem;
   font-weight: 400;
   line-height: 1.3;
@@ -1032,12 +1110,27 @@ a.work-block:hover {
   opacity: 0.6;
 }
 
+.home-work__list {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(3.5rem, 7vw, 6rem);
+}
+
 .home-work__item {
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
   color: inherit;
   text-decoration: none;
+}
+
+.home-work__title--publication,
+.case-hero--publication .case-hero__title {
+  font-style: italic;
+}
+
+.home-work__media--brief img {
+  object-position: center 30%;
 }
 
 .home-work__media {
@@ -1055,6 +1148,25 @@ a.work-block:hover {
   transition: transform 1.2s cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
+.home-work__media--lockup img,
+.home-work__media--night img {
+  object-fit: contain;
+}
+
+.home-work__media--night {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000;
+}
+
+.home-work__media--night img {
+  width: auto;
+  height: 42%;
+  max-width: 42%;
+  object-fit: contain;
+}
+
 .home-work__item:hover .home-work__media img {
   transform: scale(1.025);
 }
@@ -1068,8 +1180,9 @@ a.work-block:hover {
 
 .home-work__title {
   margin: 0;
+  font-family: var(--font-serif);
   font-size: clamp(1.25rem, 2vw, 1.625rem);
-  font-weight: var(--headline-weight);
+  font-weight: 400;
   line-height: 1.2;
   letter-spacing: var(--headline-letter-spacing);
   color: var(--headline-color);
@@ -1102,10 +1215,12 @@ a.work-block:hover {
 .home-closing__statement {
   margin: clamp(1.5rem, 3vw, 2.5rem) 0 clamp(2.5rem, 5vw, 4rem);
   max-width: 22em;
+  font-family: var(--font-serif);
   font-size: clamp(1.5rem, 2.8vw, 2.25rem);
   font-weight: 300;
+  font-style: normal;
   line-height: 1.3;
-  letter-spacing: -0.005em;
+  letter-spacing: -0.03em;
   text-wrap: balance;
 }
 
@@ -1120,6 +1235,7 @@ a.work-block:hover {
   padding: 1.1rem 2rem;
   font-family: var(--font-sans);
   font-size: 0.875rem;
+  font-weight: 500;
   line-height: 1.3;
   letter-spacing: 0.04em;
   color: #2a2926;
@@ -1164,6 +1280,11 @@ a.work-block:hover {
   .home-work__summary,
   .home-work__cta {
     grid-column: 2;
+  }
+
+  .home-practice__list {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
   }
 }
 
@@ -2092,7 +2213,7 @@ a.project-card:hover {
 
 .case-hero__title {
   margin: 0;
-  font-family: var(--font-sans);
+  font-family: var(--font-serif);
   font-size: var(--headline-size);
   font-weight: var(--headline-weight);
   line-height: var(--headline-line-height);
@@ -2129,6 +2250,21 @@ a.project-card:hover {
   object-fit: cover;
 }
 
+.case-hero__media--lockup img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2694 / 921;
+  object-fit: contain;
+}
+
+.case-hero__media--wide img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2694 / 921;
+  object-fit: cover;
+  object-position: center 51%;
+}
+
 .case-hero__media-caption {
   font-family: var(--font-mono);
   font-size: 0.8125rem;
@@ -2152,6 +2288,7 @@ a.project-card:hover {
 
 .case-metrics__value {
   margin: 0;
+  font-family: var(--font-serif);
   font-size: clamp(1.5rem, 2.5vw, 2rem);
   font-weight: var(--headline-weight);
   line-height: 1.1;
@@ -2270,6 +2407,7 @@ a.project-card:hover {
 
 .case-pillar__title {
   margin: 0;
+  font-family: var(--font-serif);
   font-size: 1.0625rem;
   font-weight: var(--font-weight-display);
   letter-spacing: 0.08em;
@@ -2493,6 +2631,7 @@ a.project-card:hover {
 
 .case-docs__title {
   margin: 0;
+  font-family: var(--font-serif);
   font-size: 1.0625rem;
   font-weight: var(--font-weight-display);
   letter-spacing: 0.08em;
@@ -2602,6 +2741,11 @@ a.project-card:hover {
     aspect-ratio: 4 / 3;
   }
 
+  .case-hero__media--lockup img,
+  .case-hero__media--wide img {
+    aspect-ratio: 2694 / 921;
+  }
+
   .case-channels__media,
   .case-docs__grid {
     grid-template-columns: 1fr;
@@ -2663,6 +2807,7 @@ a.project-card:hover {
 .contact-headline {
   margin: 0 0 clamp(3rem, 6vw, 5rem);
   max-width: 36rem;
+  font-family: var(--font-serif);
   font-size: var(--headline-size);
   font-weight: var(--headline-weight);
   line-height: var(--headline-line-height);
@@ -2758,6 +2903,7 @@ a.project-card:hover {
   padding: 1rem 4rem;
   font-family: var(--font-sans);
   font-size: 0.875rem;
+  font-weight: 500;
   letter-spacing: 0.08em;
   color: var(--color-bg);
   background-color: var(--color-text);
@@ -2819,6 +2965,42 @@ a.project-card:hover {
 
 .site-footer__copy {
   margin: 0;
+}
+
+/* Tall Tree — night ground, cream type. Scoped to that page. */
+body.page-night {
+  --bg-color: #0c0c0c;
+  --text-color: #f2f0eb;
+  --link-color: #f2f0eb;
+  --nav-link-color: #f2f0eb;
+  --color-bg: #0c0c0c;
+  --color-text: #f2f0eb;
+  --color-text-muted: #c9c4bb;
+  --color-nav-muted: #9c978f;
+  --color-border: rgba(242, 240, 235, 0.18);
+  --color-line-warm: rgba(242, 240, 235, 0.18);
+  --color-accent: #f2f0eb;
+  --color-link: #f2f0eb;
+  --color-hero-tint: #0c0c0c;
+  --color-section-tint: #0c0c0c;
+  --headline-color: #f2f0eb;
+  background-color: #0c0c0c;
+  color: #f2f0eb;
+  color-scheme: dark;
+}
+
+body.page-night ::selection {
+  background-color: #f2f0eb;
+  color: #0c0c0c;
+}
+
+/* Tall Tree intro only — Qualia shares .case-context__intent. */
+body.page-night .case-context__intent {
+  max-width: 39.5rem;
+}
+
+body.page-night .case-context__intent p + p {
+  margin-top: 1.125rem;
 }
 
 /* ==========================================================================
